@@ -1,0 +1,90 @@
+<?php if (isset($_COOKIE['rememberme'])) {
+    $token = $_COOKIE['rememberme'];
+    $query = "SELECT * FROM rememberme_tokens WHERE token = '$token' AND expiration > NOW()";
+    $result = mysqli_query($conn, $query);
+  
+    if ($result && mysqli_num_rows($result) === 1) {
+        $row = mysqli_fetch_assoc($result);
+        $user_id = $row['user_id'];
+        $_SESSION['user_id'] = $user_id;
+    }
+  }?>
+<?php
+if(isset($_SESSION['user_id'])) {
+    $buttonText = "Logout";
+    $buttonLink = "logout.php";
+} else {
+    $buttonText = "Login";
+    $buttonLink = "sign_in.php";
+}
+?>
+<header class="NavBar">
+    <div class="logo">
+        <a href="index.php">
+
+            <h2>Swift Link</h2>
+        </a>
+    </div>
+    <nav>
+        <ul class="nav_link">
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="profile.php">PROFILE</a></li>
+            <!-- <li><a  id="lightIcon" style="display: none;">Light</a></li>
+            <li><a  id="darkIcon">Dark</a></li> -->
+
+        </ul>
+    </nav>
+    <?php if (isset($_SESSION['user_id'])){
+        ?>
+    <a href="logout.php" class="cta">
+        <button id="login">
+            Logout
+        </button>
+    </a>
+    <?php
+    }else{
+        ?>
+    <a href="sign_in.php" class="cta btn-mob" >
+        <button id="login">
+            Login
+        </button>
+    </a>
+    <?php
+    }
+    ?>
+
+
+
+
+    <a onclick="openNav()" href="#" class="Menu"><Button>Menu</Button></a>
+    <div class="overlay" id="Menu">
+        <a onclick="closeNav()" href="#" class="close">&times;</a>
+        <div class="overlay-content">
+            <a href="index.php">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
+            <a href="profile.php">PROFILE</a>
+            <?php if (isset($_SESSION['user_id'])){
+        ?>
+            <a href="logout.php" class="cta">
+                <button id="login">
+                    Logout
+                </button>
+            </a>
+            <?php
+    }else{
+        ?>
+            <a href="sign_in.php" class="cta">
+                <button id="login">
+                    Login
+                </button>
+            </a>
+            <?php
+    }
+    ?>
+
+        </div>
+    </div>
+</header>
