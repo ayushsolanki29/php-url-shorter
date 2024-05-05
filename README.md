@@ -5,4 +5,4 @@
 - go to htdocs files in your xampp server files
 - clone this repo on that folder
 - install composer for PHP Mailer
-- 
+
