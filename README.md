@@ -14,7 +14,7 @@
 - change url e.g., https://github.com/ayushsolanki29 to short domain/anything 
 ## sample
 ![img](https://github.com/ayushsolanki29/php-url-shorter/blob/main/screenshot/1.png)
-![img](https://github.com/ayushsolanki29/php-url-shortere/blob/main/screenshot/2.png)
-![img](https://github.com/ayushsolanki29/php-url-shortere/blob/main/screenshot/3.png)
-![img](https://github.com/ayushsolanki29/php-url-shortere/blob/main/screenshot/4.png)
-![img](https://github.com/ayushsolanki29/php-url-shortere/blob/main/screenshot/5.png)
+![img](https://github.com/ayushsolanki29/php-url-shorter/blob/main/screenshot/2.png)
+![img](https://github.com/ayushsolanki29/php-url-shorter/blob/main/screenshot/3.png)
+![img](https://github.com/ayushsolanki29/php-url-shorter/blob/main/screenshot/4.png)
+![img](https://github.com/ayushsolanki29/php-url-shorter/blob/main/screenshot/5.png)
